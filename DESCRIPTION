@@ -1,0 +1,27 @@
+Package: powerballtools
+Title: Tools for Exploring Powerball Lottery Draws
+Version: 0.0.1
+Authors@R: 
+    person(given = "Andrew",
+           family = "Burson",
+           role = c("aut", "cre"),
+           email = "aburson1@usf.edu")
+Description: Helper functions and data to explore historical Powerball
+    lottery drawings. Includes the pb_draws dataset with draw dates,
+    winning numbers, and multipliers from 2010 onward, plus tools to
+    summarise number frequencies, generate example tickets, and check
+    how a ticket would have performed.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.0.0)
+Imports:
+    ggplot2
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

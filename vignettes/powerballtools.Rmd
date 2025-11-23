@@ -1,0 +1,56 @@
+---
+title: "powerballtools"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{powerballtools}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(powerballtools)
+```
+
+```markdown
+## Introduction
+
+This vignette shows how to use the `powerballtools` package.
+The package uses historic Powerball drawings to explore number
+frequencies, generate example tickets, and check how a ticket
+would have matched past draws.
+
+## Load the dataset
+
+```{r}
+data("pb_draws")
+head(pb_draws)
+str(pb_draws)
+
+freq_white <- pb_most_common_numbers(type = "white", top_n = 10)
+freq_white
+plot(freq_white)
+```
+
+```{r}
+pb_random_ticket()
+pb_random_ticket(weighted = TRUE)
+```
+
+```{r}
+ticket <- pb_random_ticket(weighted = TRUE)
+ticket
+
+ticket <- pb_random_ticket(weighted = TRUE)
+ticket
+results <- pb_check_ticket(ticket$white, ticket$powerball)
+head(results)
+summary(results$white_matches)
+```
+
